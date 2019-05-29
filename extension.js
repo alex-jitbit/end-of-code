@@ -27,6 +27,7 @@ function activate(context) {
 				let line = activeEditor.document.lineAt(lineNum);
 				let pos = line.text.indexOf(commentSeparator);
 				if (pos < 1) break; //0 is when the whole string is a comment
+				
 				while (line.text.charAt(pos - 1) === ' ' && pos > 0) pos--;
 				let position = new vscode.Position(lineNum, pos);
 				activeEditor.selection = new vscode.Selection(position, position);
