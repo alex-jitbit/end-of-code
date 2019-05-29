@@ -9,3 +9,7 @@ let x = someVariable; //here's some comment
 ```
 
 Just before the `//here's some comment`
+
+## Language support
+
+JavaScript/TypeScript, C#, C++, PHP, Ruby, Python, Java, HTML
