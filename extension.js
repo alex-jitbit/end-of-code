@@ -9,13 +9,9 @@ const vscode = require('vscode');
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
-	console.log("activated");
 	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with  registerCommand
-	// The commandId parameter must match the command field in package.json
+	// Now provide the implementation of the command with registerCommand
 	let disposable = vscode.commands.registerCommand('extension.goToEndOfCode', function () {
-		// The code you place here will be executed every time your command is executed
-
 		const activeEditor = vscode.window.activeTextEditor;
 		if (activeEditor) {
 			do {
@@ -28,7 +24,8 @@ function activate(context) {
 				let pos = line.text.indexOf(commentSeparator);
 				if (pos < 1) break; //0 is when the whole string is a comment
 				
-				while (line.text.charAt(pos - 1) === ' ' && pos > 0) pos--;
+				while (line.text.charAt(pos - 1) === ' ' && pos > 0) pos--; //skip back to the first "non-space" (todo: needs reworking)
+				
 				let position = new vscode.Position(lineNum, pos);
 				activeEditor.selection = new vscode.Selection(position, position);
 				return;
