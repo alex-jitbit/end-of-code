@@ -13,3 +13,7 @@ Just before the `//here's some comment`
 ## Language support
 
 JavaScript/TypeScript, C#, C++, PHP, Ruby, Python, Java, HTML
+
+## Installation
+
+Get it here: https://marketplace.visualstudio.com/items?itemName=Jitbit1.end-of-code
